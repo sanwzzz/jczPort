@@ -1,6 +1,5 @@
-import communication.Meth;
-import communication.forward.ForwardAdapter;
-import communication.listener.ListenerAdapter;
+import communication.forward.ForwardStarter;
+import communication.listener.ListenerStarter;
 import config.Configuration;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,10 +11,11 @@ public class Application {
 		Configuration config = new Configuration();
 		config.init();
 
-		ListenerAdapter listenerAdapter = new ListenerAdapter(config);
+		ListenerStarter listenerAdapter = new ListenerStarter(config);
 		listenerAdapter.start();
-		ForwardAdapter forwardAdapter = new ForwardAdapter(config);
-		forwardAdapter.start();
+
+		ForwardStarter forwardStarter = new ForwardStarter(config);
+		forwardStarter.start();
 		log.info("启动完成");
 	}
 }

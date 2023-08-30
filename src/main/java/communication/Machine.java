@@ -1,6 +1,6 @@
 package communication;
 
-public abstract class Meth{
+public abstract class Machine {
 
 
 
